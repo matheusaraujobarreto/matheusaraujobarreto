@@ -6,7 +6,7 @@
 
 **Estagiário de Automação de Processos @ MAPA · Ciência da Computação · Brasília, DF**
 
-[![Portfólio](https://img.shields.io/badge/Portf%C3%B3lio-0D7C86?style=for-the-badge&logo=githubpages&logoColor=white)](https://matheusaraujobarreto.github.io)
+[![Portfólio](https://img.shields.io/badge/Portf%C3%B3lio-0D7C86?style=for-the-badge&logo=githubpages&logoColor=white)]([https://matheusaraujobarreto.github.io](https://matheusaraujobarreto.github.io/matheusaraujobarreto/))
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/matheus-de-araujo-barreto)
 [![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:matheusaraujobarreto711@gmail.com)
 [![Currículo](https://img.shields.io/badge/Curr%C3%ADculo-PDF-181717?style=for-the-badge&logo=readme&logoColor=white)](https://matheusaraujobarreto.github.io/curriculo-matheus-de-araujo-barreto.pdf)
@@ -54,9 +54,8 @@ Também sei montar, manter e diagnosticar computadores, o que me dá uma boa bas
 
 | Projeto | O que é | Stack |
 | --- | --- | --- |
-| [**web-scraping-automations**](https://github.com/matheusaraujobarreto/web-scraping-automations) | Automações para coleta e tratamento de dados | `Python` |
-| [**Projeto-Integrador---2026-1**](https://github.com/matheus-araujo145/Projeto-Integrador---2026-1) | Projeto Integrador do IESB, com foco em Estrutura de Dados | `IESB` |
-| [**estrutura-de-dados-2026-1**](https://github.com/matheus-araujo145/estrutura-de-dados-2026-1) | Repositório da disciplina de Estrutura de Dados | `IESB` |
+| [![**web-scraping-automations**](https://github.com/matheusaraujobarreto/web-scraping-automations)](https://github.com/matheusaraujobarreto/web-scraping-automations) | Automações para coleta e tratamento de dados | `Python` |
+| [![**Projeto-Integrador---2026-1**](https://github.com/matheus-araujo145/Projeto-Integrador---2026-1)](https://github.com/matheus-araujo145/Projeto-Integrador---2026-1) | Projeto Integrador do IESB, com foco em Estrutura de Dados | `IESB` |
 
 ## 📊 GitHub
 
@@ -94,9 +93,8 @@ I can also build, maintain and diagnose computers, which gives me a solid base i
 
 ### Projects
 
-- [**web-scraping-automations**](https://github.com/matheusaraujobarreto/web-scraping-automations): Python automations for data collection and processing
-- [**Projeto-Integrador---2026-1**](https://github.com/matheus-araujo145/Projeto-Integrador---2026-1): IESB capstone project focused on Data Structures
-- [**estrutura-de-dados-2026-1**](https://github.com/matheus-araujo145/estrutura-de-dados-2026-1): Data Structures course repository
+- [![**web-scraping-automations**](https://github.com/matheusaraujobarreto/web-scraping-automations)](https://github.com/matheusaraujobarreto/web-scraping-automations): Python automations for data collection and processing
+- [![**Projeto-Integrador---2026-1**](https://github.com/matheus-araujo145/Projeto-Integrador---2026-1)](https://github.com/matheus-araujo145/Projeto-Integrador---2026-1): IESB capstone project focused on Data Structures
 
 ### Languages
 
