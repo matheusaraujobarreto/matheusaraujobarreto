@@ -6,7 +6,7 @@
 
 **Estagiário de Automação de Processos @ MAPA · Ciência da Computação · Brasília, DF**
 
-[![Portfólio](https://img.shields.io/badge/Portf%C3%B3lio-0D7C86?style=for-the-badge&logo=githubpages&logoColor=white)]([https://matheusaraujobarreto.github.io](https://matheusaraujobarreto.github.io/matheusaraujobarreto/))
+[![Portfólio](https://img.shields.io/badge/Portf%C3%B3lio-0D7C86?style=for-the-badge&logo=githubpages&logoColor=white)](https://matheusaraujobarreto.github.io/matheusaraujobarreto/)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/matheus-de-araujo-barreto)
 [![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:matheusaraujobarreto711@gmail.com)
 [![Currículo](https://img.shields.io/badge/Curr%C3%ADculo-PDF-181717?style=for-the-badge&logo=readme&logoColor=white)](https://matheusaraujobarreto.github.io/curriculo-matheus-de-araujo-barreto.pdf)
