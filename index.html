@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Matheus de Araújo Barreto — Back-End Developer</title>
+<meta name="description" content="Back-end developer (Python) focused on process automation, data pipelines and clean systems. Brasília, Brazil.">
+<meta property="og:title" content="Matheus de Araújo Barreto — Back-End Developer">
+<meta property="og:description" content="Python, automation, data pipelines. Open to internships and junior roles (BR & remote).">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚙️</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f5f7fa; --surface:#ffffff; --ink:#151a22; --muted:#5b6574; --line:#e1e6ee;
+  --accent:#0d7c86; --accent-ink:#ffffff; --accent-soft:#dff3f4; --warm:#e0894b;
+  --shadow:0 1px 2px rgba(20,30,50,.05),0 8px 24px -12px rgba(20,30,50,.12);
+  --r:14px;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0f141b; --surface:#171d26; --ink:#e8edf4; --muted:#94a0b1; --line:#252d3a;
+  --accent:#3fc1c9; --accent-ink:#06282b; --accent-soft:#12343a; --shadow:none}}
+:root[data-theme="dark"]{
+  --bg:#0f141b; --surface:#171d26; --ink:#e8edf4; --muted:#94a0b1; --line:#252d3a;
+  --accent:#3fc1c9; --accent-ink:#06282b; --accent-soft:#12343a; --shadow:none}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{background:var(--bg);color:var(--ink);font:400 16px/1.65 "Instrument Sans",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:"Bricolage Grotesque",system-ui,sans-serif;line-height:1.15;letter-spacing:-.02em}
+a{color:inherit}
+.wrap{max-width:1000px;margin:0 auto;padding:0 24px}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
+
+/* nav */
+nav{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;gap:20px;height:60px}
+nav .logo{font:700 18px "Bricolage Grotesque";text-decoration:none;margin-right:auto}
+nav .links{display:flex;gap:18px}
+nav .links a{font-size:14px;color:var(--muted);text-decoration:none;padding:4px 0;border-bottom:2px solid transparent}
+nav .links a:hover,nav .links a.on{color:var(--ink);border-color:var(--accent)}
+.tool{display:flex;gap:6px}
+.tool button{background:var(--surface);border:1px solid var(--line);color:var(--ink);border-radius:999px;height:34px;min-width:34px;padding:0 12px;font:500 13px "Instrument Sans";cursor:pointer;transition:border-color .15s}
+.tool button:hover{border-color:var(--accent)}
+@media(max-width:760px){nav .links{display:none}}
+
+/* hero */
+.hero{padding:72px 0 40px;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.status{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--muted);background:var(--surface);border:1px solid var(--line);padding:5px 12px;border-radius:999px}
+.status i{width:8px;height:8px;border-radius:50%;background:#2fb672;box-shadow:0 0 0 0 rgba(47,182,114,.5);animation:pulse 2.4s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 8px rgba(47,182,114,0)}100%{box-shadow:0 0 0 0 rgba(47,182,114,0)}}
+h1{font-size:clamp(38px,6vw,60px);margin:18px 0 14px;font-weight:700}
+.hero p.lead{color:var(--muted);font-size:18px;max-width:52ch}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 18px;border-radius:10px;font-weight:600;font-size:15px;text-decoration:none;border:1px solid var(--line);background:var(--surface);cursor:pointer;color:var(--ink);font-family:inherit;transition:transform .15s,border-color .15s}
+.btn:hover{transform:translateY(-2px);border-color:var(--accent)}
+.btn.primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.btn svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+/* pipeline */
+.pipe{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);overflow:hidden}
+.pipe header{display:flex;align-items:center;gap:6px;padding:10px 14px;border-bottom:1px solid var(--line);font:500 12px "JetBrains Mono",monospace;color:var(--muted)}
+.pipe header b{width:9px;height:9px;border-radius:50%;background:var(--line)}
+.pipe header span{margin-left:auto}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;padding:16px 14px 6px}
+.step{border:1px solid var(--line);background:var(--bg);border-radius:10px;padding:10px 4px;text-align:center;cursor:pointer;font:inherit;color:var(--ink);transition:all .2s}
+.step svg{width:22px;height:22px;stroke:var(--muted);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;display:block;margin:0 auto 4px;transition:stroke .2s}
+.step span{font-size:12px;font-weight:600}
+.step:hover{border-color:var(--accent)}
+.step.on{background:var(--accent-soft);border-color:var(--accent)}
+.step.on svg{stroke:var(--accent)}
+.bar{height:3px;margin:10px 14px 0;background:var(--line);border-radius:3px;overflow:hidden}
+.bar div{height:100%;width:25%;background:var(--accent);transition:width .45s}
+.log{padding:14px;font:400 13px/1.6 "JetBrains Mono",monospace;min-height:112px;color:var(--muted)}
+.log em{color:var(--accent);font-style:normal}
+.run{margin:0 14px 14px}
+@media(max-width:820px){.hero{grid-template-columns:1fr;padding-top:44px}}
+
+/* sections */
+section{padding:56px 0}
+.sec-head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:26px}
+h2{font-size:clamp(26px,3.5vw,34px)}
+.sub{color:var(--muted);font-size:15px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:22px;box-shadow:var(--shadow)}
+.about{display:grid;grid-template-columns:1.4fr 1fr;gap:20px}
+.about p+p{margin-top:12px}
+.facts{list-style:none;padding:0;display:grid;gap:14px}
+.facts li{display:flex;gap:12px;align-items:flex-start;font-size:15px}
+.facts svg{flex:none;width:20px;height:20px;stroke:var(--accent);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;margin-top:3px}
+.facts small{display:block;color:var(--muted);font-size:13px}
+@media(max-width:760px){.about{grid-template-columns:1fr}}
+
+/* timeline */
+.tl{border-left:2px solid var(--line);margin-left:6px;padding-left:24px;position:relative}
+.tl .item{position:relative;padding-bottom:22px}
+.tl .item::before{content:"";position:absolute;left:-31px;top:8px;width:12px;height:12px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px var(--bg)}
+.tl .item.past::before{background:var(--line)}
+.tl h3{font-size:19px}
+.tl .meta{font-size:14px;color:var(--muted);margin:2px 0 8px}
+.tl ul{padding-left:18px;color:var(--ink)}
+.tl li{margin:4px 0;font-size:15px}
+.tl li::marker{color:var(--accent)}
+details summary{cursor:pointer;color:var(--accent);font-weight:600;font-size:14px;margin-top:6px;list-style:none}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:" +"}
+details[open] summary::after{content:" −"}
+
+/* skills */
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+.chip{border:1px solid var(--line);background:var(--surface);color:var(--muted);border-radius:999px;padding:6px 14px;font:500 14px "Instrument Sans";cursor:pointer;transition:all .15s}
+.chip:hover{border-color:var(--accent);color:var(--ink)}
+.chip.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.skills{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
+.skill{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px;transition:transform .2s,border-color .2s,opacity .25s}
+.skill:hover{transform:translateY(-3px);border-color:var(--accent)}
+.skill.hide{display:none}
+.skill .ic{width:38px;height:38px;border-radius:10px;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center;font:500 13px "JetBrains Mono",monospace;margin-bottom:10px}
+.skill b{display:block;font-size:15px}
+.skill small{color:var(--muted);font-size:13px}
+.learning{margin-top:16px;font-size:14px;color:var(--muted)}
+
+/* projects */
+.projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.proj{display:flex;flex-direction:column;gap:10px;text-decoration:none;transition:transform .2s,border-color .2s}
+.proj:hover{transform:translateY(-4px);border-color:var(--accent)}
+.proj h3{font-size:18px;display:flex;justify-content:space-between;gap:8px;align-items:center}
+.proj h3 svg{width:18px;height:18px;stroke:var(--muted);fill:none;stroke-width:2;flex:none;transition:transform .2s,stroke .2s}
+.proj:hover h3 svg{transform:translate(2px,-2px);stroke:var(--accent)}
+.proj p{color:var(--muted);font-size:15px;flex:1}
+.tags{display:flex;gap:6px;flex-wrap:wrap}
+.tags span{font:500 12px "JetBrains Mono",monospace;background:var(--accent-soft);color:var(--accent);padding:3px 9px;border-radius:6px}
+
+/* edu */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.two h3{font-size:17px;margin-bottom:12px}
+.two ul{list-style:none;padding:0;display:grid;gap:10px;font-size:15px}
+.two li small{display:block;color:var(--muted);font-size:13px}
+.lang{display:flex;align-items:center;gap:12px;font-size:15px}
+.lang .lv{flex:1;height:6px;background:var(--line);border-radius:6px;overflow:hidden}
+.lang .lv i{display:block;height:100%;background:var(--accent);border-radius:6px}
+@media(max-width:760px){.two{grid-template-columns:1fr}}
+
+/* contact */
+.contact{text-align:center;padding:40px 24px}
+.contact h2{margin-bottom:8px}
+.contact .cta{justify-content:center}
+footer{padding:28px 0 44px;text-align:center;color:var(--muted);font-size:13px}
+.toast{position:fixed;left:50%;bottom:28px;transform:translate(-50%,20px);background:var(--ink);color:var(--bg);padding:9px 16px;border-radius:10px;font-size:14px;opacity:0;pointer-events:none;transition:all .25s}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="logo" href="#top">matheus.dev</a>
+    <div class="links">
+      <a href="#about" data-i="n_about"></a>
+      <a href="#exp" data-i="n_exp"></a>
+      <a href="#skills" data-i="n_skills"></a>
+      <a href="#projects" data-i="n_proj"></a>
+      <a href="#contact" data-i="n_contact"></a>
+    </div>
+    <div class="tool">
+      <button id="lang" aria-label="Change language / Trocar idioma">EN</button>
+      <button id="theme" aria-label="Toggle theme">◐</button>
+    </div>
+  </div>
+</nav>
+
+<main id="top">
+<div class="wrap">
+  <div class="hero">
+    <div>
+      <span class="status"><i></i><span data-i="status"></span></span>
+      <h1>Matheus de Araújo Barreto</h1>
+      <p class="lead" data-i="lead"></p>
+      <div class="cta">
+        <a class="btn primary" href="#projects"><span data-i="cta_proj"></span></a>
+        <a class="btn" href="curriculo-matheus-de-araujo-barreto.pdf" download>
+          <svg viewBox="0 0 24 24"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16"/></svg><span data-i="cta_cv"></span></a>
+        <a class="btn" href="#contact"><span data-i="cta_contact"></span></a>
+      </div>
+    </div>
+
+    <div class="pipe" aria-label="Interactive automation pipeline">
+      <header><b></b><b></b><b></b><span>pipeline.py</span></header>
+      <div class="steps" role="tablist">
+        <button class="step on" data-s="0"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg><span data-i="p0"></span></button>
+        <button class="step" data-s="1"><svg viewBox="0 0 24 24"><path d="M3 5h18l-7 8v6l-4 2v-8z"/></svg><span data-i="p1"></span></button>
+        <button class="step" data-s="2"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v12c0 1.7 3.6 3 8 3s8-1.3 8-3V6M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg><span data-i="p2"></span></button>
+        <button class="step" data-s="3"><svg viewBox="0 0 24 24"><circle cx="5" cy="6" r="2"/><circle cx="19" cy="6" r="2"/><circle cx="12" cy="19" r="2"/><path d="M7 6h10M6 8l5 9M18 8l-5 9"/></svg><span>n8n</span></button>
+      </div>
+      <div class="bar"><div id="bar"></div></div>
+      <div class="log" id="log"></div>
+      <button class="btn run" id="run"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg><span data-i="run"></span></button>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+<section id="about">
+  <div class="sec-head"><h2 data-i="n_about"></h2></div>
+  <div class="about">
+    <div class="card"><p data-i="about1"></p><p data-i="about2"></p></div>
+    <ul class="card facts">
+      <li><svg viewBox="0 0 24 24"><path d="M12 21s-7-6-7-11a7 7 0 0114 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><div>Brasília – DF<small data-i="f_loc"></small></div></li>
+      <li><svg viewBox="0 0 24 24"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c3 2.5 9 2.5 12 0v-5"/></svg><div data-i="f_edu"></div></li>
+      <li><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg><div data-i="f_int"></div></li>
+    </ul>
+  </div>
+</section>
+
+<section id="exp">
+  <div class="sec-head"><h2 data-i="n_exp"></h2></div>
+  <div class="tl">
+    <div class="item">
+      <h3 data-i="job_t"></h3>
+      <div class="meta" data-i="job_m"></div>
+      <ul>
+        <li data-i="job1"></li>
+        <li data-i="job2"></li>
+        <li data-i="job3"></li>
+      </ul>
+      <details><summary data-i="stack"></summary><div class="tags" style="margin-top:8px"><span>Python</span><span>Selenium</span><span>n8n</span><span>SQL</span><span>Spreadsheets</span></div></details>
+    </div>
+    <div class="item past">
+      <h3 data-i="edu_t"></h3>
+      <div class="meta" data-i="edu_m"></div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="sec-head"><h2 data-i="n_skills"></h2><span class="sub" data-i="sk_sub"></span></div>
+  <div class="chips" id="chips">
+    <button class="chip on" data-f="all" data-i="c_all"></button>
+    <button class="chip" data-f="lang" data-i="c_lang"></button>
+    <button class="chip" data-f="tool" data-i="c_tool"></button>
+    <button class="chip" data-f="hw" data-i="c_hw"></button>
+    <button class="chip" data-f="soft" data-i="c_soft"></button>
+  </div>
+  <div class="skills">
+    <div class="skill" data-c="lang"><div class="ic">Py</div><b>Python</b><small data-i="s_py"></small></div>
+    <div class="skill" data-c="lang"><div class="ic">DB</div><b>MySQL</b><small data-i="s_sql"></small></div>
+    <div class="skill" data-c="tool"><div class="ic">Se</div><b>Selenium</b><small data-i="s_sel"></small></div>
+    <div class="skill" data-c="tool"><div class="ic">n8</div><b>n8n</b><small data-i="s_n8n"></small></div>
+    <div class="skill" data-c="tool"><div class="ic">Git</div><b>Git &amp; GitHub</b><small data-i="s_git"></small></div>
+    <div class="skill" data-c="hw"><div class="ic">PC</div><b>Hardware</b><small data-i="s_hw"></small></div>
+    <div class="skill" data-c="soft"><div class="ic">👥</div><b data-i="s_collab"></b><small data-i="s_collab_d"></small></div>
+    <div class="skill" data-c="soft"><div class="ic">✔</div><b data-i="s_org"></b><small data-i="s_org_d"></small></div>
+    <div class="skill" data-c="soft"><div class="ic">⚡</div><b data-i="s_pro"></b><small data-i="s_pro_d"></small></div>
+  </div>
+  <p class="learning" data-i="learning"></p>
+</section>
+
+<section id="projects">
+  <div class="sec-head"><h2 data-i="n_proj"></h2><span class="sub" data-i="pj_sub"></span></div>
+  <div class="projects">
+    <a class="card proj" href="https://github.com/matheusaraujobarreto/web-scraping-automations" target="_blank" rel="noopener">
+      <h3>web-scraping-automations<svg viewBox="0 0 24 24"><path d="M7 17L17 7M8 7h9v9"/></svg></h3>
+      <p data-i="pj1"></p>
+      <div class="tags"><span>Python</span><span>Automation</span><span>Data</span></div>
+    </a>
+    <a class="card proj" href="https://github.com/matheus-araujo145/Projeto-Integrador---2026-1" target="_blank" rel="noopener">
+      <h3>Projeto-Integrador-2026-1<svg viewBox="0 0 24 24"><path d="M7 17L17 7M8 7h9v9"/></svg></h3>
+      <p data-i="pj2"></p>
+      <div class="tags"><span>IESB</span><span>Data Structures</span></div>
+    </a>
+    <a class="card proj" href="https://github.com/matheus-araujo145/estrutura-de-dados-2026-1" target="_blank" rel="noopener">
+      <h3>estrutura-de-dados-2026-1<svg viewBox="0 0 24 24"><path d="M7 17L17 7M8 7h9v9"/></svg></h3>
+      <p data-i="pj3"></p>
+      <div class="tags"><span>IESB</span><span>Data Structures</span></div>
+    </a>
+  </div>
+  <p class="learning"><a href="https://github.com/matheusaraujobarreto" target="_blank" rel="noopener">github.com/matheusaraujobarreto</a> · <a href="https://github.com/matheus-araujo145" target="_blank" rel="noopener">github.com/matheus-araujo145</a></p>
+</section>
+
+<section id="more">
+  <div class="two">
+    <div class="card">
+      <h3 data-i="courses"></h3>
+      <ul>
+        <li data-i="k1"></li><li data-i="k2"></li><li data-i="k3"></li><li data-i="k4"></li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3 data-i="langs"></h3>
+      <ul>
+        <li class="lang"><span style="width:90px" data-i="l_pt"></span><div class="lv"><i style="width:100%"></i></div><span data-i="l_pt_l"></span></li>
+        <li class="lang"><span style="width:90px" data-i="l_en"></span><div class="lv"><i style="width:55%"></i></div><span data-i="l_en_l"></span></li>
+      </ul>
+      <p class="learning" data-i="en_note"></p>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="card contact">
+    <h2 data-i="ct_t"></h2>
+    <p class="sub" data-i="ct_s"></p>
+    <div class="cta">
+      <button class="btn primary" id="copy"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><span>matheusaraujobarreto711@gmail.com</span></button>
+      <a class="btn" href="https://www.linkedin.com/in/matheus-de-araujo-barreto" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn" href="https://github.com/matheusaraujobarreto" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</section>
+</div>
+</main>
+<footer>© <span id="yr"></span> Matheus de Araújo Barreto</footer>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+const T={
+pt:{
+n_about:"Sobre",n_exp:"Experiência",n_skills:"Skills",n_proj:"Projetos",n_contact:"Contato",
+status:"Aberto a estágio e vagas júnior",
+lead:"Desenvolvedor Back-End em formação. Construo automações e sistemas em Python que transformam dados soltos em processos confiáveis.",
+cta_proj:"Ver projetos",cta_cv:"Baixar currículo",cta_contact:"Falar comigo",
+run:"Rodar pipeline",
+p0:"Coleta",p1:"Tratamento",p2:"Banco",
+l0:["Selenium abre o portal e coleta os registros.","<em>$</em> python coleta.py","→ dados brutos coletados"],
+l1:["Limpeza e padronização dos dados.","<em>$</em> python tratar.py","→ dados prontos para o banco"],
+l2:["Organização em banco de dados e planilhas.","<em>$</em> python salvar.py","→ registros gravados"],
+l3:["Integração com ferramentas de automação.","<em>$</em> n8n run fluxo","→ processo automatizado"],
+about1:"Sou estudante de Ciência da Computação no IESB e estagiário de automação de processos no Ministério da Agricultura e Pecuária (MAPA), onde trabalho com Python, Selenium e n8n.",
+about2:"Também entendo de montagem, manutenção e diagnóstico de computadores, o que me dá uma boa visão de hardware e sistemas. Busco consolidar minha carreira em Back-End, com foco em eficiência, qualidade e aprendizado contínuo.",
+f_loc:"Aceito remoto e híbrido",f_edu:"Ciência da Computação, IESB<small>Desde fev/2025</small>",f_int:"Estágio em Automação de Processos<small>MAPA, nov/2025 a nov/2026</small>",
+job_t:"Estágio em Automação de Processos, MAPA",job_m:"Nov/2025 – Nov/2026",
+job1:"Construção de automações para coleta de dados e organização de banco de dados com Selenium e Python.",
+job2:"Análise e tratamento de dados, com foco em construção e manutenção de planilhas e bancos de dados governamentais.",
+job3:"Participação no design e na construção de um sistema de automação de processos, integrando os dados a ferramentas como o n8n.",
+stack:"Tecnologias usadas",edu_t:"Ciência da Computação, IESB",edu_m:"Fev/2025 – Presente",
+sk_sub:"Clique nos filtros",c_all:"Todas",c_lang:"Linguagens",c_tool:"Ferramentas",c_hw:"Hardware",c_soft:"Soft skills",
+s_py:"Automação e back-end",s_sql:"Bancos de dados",s_sel:"Coleta de dados web",s_n8n:"Fluxos de automação",s_git:"Versionamento",s_hw:"Montagem e diagnóstico",
+s_collab:"Colaboração",s_collab_d:"Trabalho em equipe",s_org:"Organização",s_org_d:"Processos claros",s_pro:"Proatividade",s_pro_d:"Iniciativa",
+learning:"Também estudei: HTML/CSS/JS, PHP e Java básico.",
+pj_sub:"Repositórios no GitHub",
+pj1:"Automações para coleta e tratamento de dados, em Python.",
+pj2:"Projeto Integrador do IESB (2026.1), com foco em Estrutura de Dados.",
+pj3:"Repositório da disciplina de Estrutura de Dados (2026.1).",
+courses:"Cursos complementares",k1:"Introdução ao desenvolvimento Web (HTML, CSS e JS)",k2:"Introdução ao PHP, desenvolvimento por trás da Web",k3:"Java básico, construção de sistemas",k4:"Python 3 do básico ao avançado",
+langs:"Idiomas",l_pt:"Português",l_pt_l:"Nativo",l_en:"Inglês",l_en_l:"Intermediário",
+en_note:"Leio documentação técnica em inglês e estou melhorando a conversação.",
+ct_t:"Vamos conversar?",ct_s:"Respondo por e-mail ou LinkedIn.",copied:"E-mail copiado"},
+en:{
+n_about:"About",n_exp:"Experience",n_skills:"Skills",n_proj:"Projects",n_contact:"Contact",
+status:"Open to internships and junior roles",
+lead:"Back-end developer in training. I build Python automations and systems that turn scattered data into reliable processes.",
+cta_proj:"See projects",cta_cv:"Download résumé",cta_contact:"Get in touch",
+run:"Run pipeline",
+p0:"Collect",p1:"Clean",p2:"Database",
+l0:["Selenium opens the portal and collects records.","<em>$</em> python collect.py","→ raw data collected"],
+l1:["Cleaning and standardizing the data.","<em>$</em> python clean.py","→ data ready for the database"],
+l2:["Organizing data into databases and spreadsheets.","<em>$</em> python save.py","→ records stored"],
+l3:["Integrating with automation tools.","<em>$</em> n8n run workflow","→ process automated"],
+about1:"I'm a Computer Science student at IESB and a process automation intern at Brazil's Ministry of Agriculture and Livestock (MAPA), working with Python, Selenium and n8n.",
+about2:"I also know how to build, maintain and diagnose computers, which gives me a solid grasp of hardware and systems. I'm looking to grow my career in back-end development, focused on efficiency, quality and continuous learning.",
+f_loc:"Open to remote and hybrid",f_edu:"Computer Science, IESB<small>Since Feb 2025</small>",f_int:"Process Automation Intern<small>MAPA, Nov 2025 – Nov 2026</small>",
+job_t:"Process Automation Intern, MAPA",job_m:"Nov 2025 – Nov 2026",
+job1:"Built automations for data collection and database organization using Selenium and Python.",
+job2:"Analyzed and cleaned data, building and maintaining spreadsheets and government databases.",
+job3:"Helped design and build a process automation system, integrating process data with tools such as n8n.",
+stack:"Tech used",edu_t:"B.Sc. Computer Science, IESB",edu_m:"Feb 2025 – Present",
+sk_sub:"Click a filter",c_all:"All",c_lang:"Languages",c_tool:"Tools",c_hw:"Hardware",c_soft:"Soft skills",
+s_py:"Automation and back-end",s_sql:"Databases",s_sel:"Web data collection",s_n8n:"Automation workflows",s_git:"Version control",s_hw:"Assembly and diagnostics",
+s_collab:"Collaboration",s_collab_d:"Teamwork",s_org:"Organization",s_org_d:"Clear processes",s_pro:"Proactivity",s_pro_d:"Self-starter",
+learning:"Also studied: HTML/CSS/JS, PHP and basic Java.",
+pj_sub:"Repositories on GitHub",
+pj1:"Python automations for data collection and processing.",
+pj2:"IESB capstone project (2026.1) focused on Data Structures.",
+pj3:"Data Structures course repository (2026.1).",
+courses:"Courses",k1:"Intro to Web Development (HTML, CSS, JS)",k2:"Intro to PHP, back-end web development",k3:"Basic Java, building systems",k4:"Python 3, beginner to advanced",
+langs:"Languages",l_pt:"Portuguese",l_pt_l:"Native",l_en:"English",l_en_l:"Intermediate",
+en_note:"I read technical documentation in English and I'm improving my speaking.",
+ct_t:"Let's talk",ct_s:"I reply by email or LinkedIn.",copied:"Email copied"}
+};
+let lang=(navigator.language||"pt").toLowerCase().startsWith("pt")?"pt":"en";
+try{lang=localStorage.getItem("lang")||lang}catch(e){}
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+function apply(){
+  document.documentElement.lang=lang==="pt"?"pt-BR":"en";
+  $$("[data-i]").forEach(e=>e.innerHTML=T[lang][e.dataset.i]??"");
+  $("#lang").textContent=lang==="pt"?"EN":"PT";
+  showStep(cur,true);
+}
+let cur=0,timer;
+function showStep(n,noAuto){
+  cur=n;
+  $$(".step").forEach((b,i)=>b.classList.toggle("on",i===n));
+  $("#bar").style.width=(n+1)*25+"%";
+  $("#log").innerHTML=T[lang]["l"+n].join("<br>");
+}
+$$(".step").forEach(b=>b.onclick=()=>{clearInterval(timer);showStep(+b.dataset.s)});
+$("#run").onclick=()=>{clearInterval(timer);let i=0;showStep(0);timer=setInterval(()=>{i++;if(i>3){clearInterval(timer);return}showStep(i)},1100)};
+$("#lang").onclick=()=>{lang=lang==="pt"?"en":"pt";try{localStorage.setItem("lang",lang)}catch(e){}apply()};
+$("#theme").onclick=()=>{
+  const d=document.documentElement,isDark=d.dataset.theme?d.dataset.theme==="dark":matchMedia("(prefers-color-scheme:dark)").matches;
+  d.dataset.theme=isDark?"light":"dark";try{localStorage.setItem("theme",d.dataset.theme)}catch(e){}
+};
+try{const t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}
+$$(".chip").forEach(c=>c.onclick=()=>{
+  $$(".chip").forEach(x=>x.classList.toggle("on",x===c));
+  $$(".skill").forEach(s=>s.classList.toggle("hide",c.dataset.f!=="all"&&s.dataset.c!==c.dataset.f));
+});
+function toast(m){const t=$("#toast");t.textContent=m;t.classList.add("show");setTimeout(()=>t.classList.remove("show"),1800)}
+$("#copy").onclick=async()=>{
+  const m="matheusaraujobarreto711@gmail.com";
+  try{await navigator.clipboard.writeText(m);toast(T[lang].copied)}catch(e){location.href="mailto:"+m}
+};
+const secs=$$("main section[id]"),links=$$(".links a");
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)links.forEach(a=>a.classList.toggle("on",a.getAttribute("href")==="#"+e.target.id))}),{rootMargin:"-45% 0px -50% 0px"});
+secs.forEach(x=>io.observe(x));
+$("#yr").textContent=new Date().getFullYear();
+apply();
+</script>
+</body>
+</html>
